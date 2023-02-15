@@ -19,7 +19,20 @@ function App(): JSX.Element {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator
+        initialRouteName="Home"
+        screenOptions={{
+          title: 'User Screen',
+          headerStyle: {
+              backgroundColor: '#a4511e',
+          },
+          headerTintColor: '#FFF',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            color: '#0096FF'
+          }
+        }}
+      >
         <Stack.Screen
           name="Home"
           component={HomeScreen}
@@ -33,17 +46,17 @@ function App(): JSX.Element {
             userName: 'Gildong',
             userLastname: 'Go'
           }}
-          // options={{
-          //   title: 'User Screen',
-          //   headerStyle: {
-          //       backgroundColor: 'pink',
-          //   },
-          //   headerTintColor: 'red',
-          //   headerTitleStyle: {
-          //     fontWeight: 'bold',
-          //     color: 'purple'
-          //   }
-          // }}
+          options={{
+            title: 'User Screen',
+            headerStyle: {
+                backgroundColor: 'pink',
+            },
+            headerTintColor: 'red',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+              color: 'purple'
+            }
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
