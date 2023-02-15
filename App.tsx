@@ -6,7 +6,7 @@
  */
 
 import React, { Component } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './src/home';
@@ -16,7 +16,15 @@ const Stack = createNativeStackNavigator();
 
 
 function App(): JSX.Element {
-
+  const logoTitle = () => {
+    return (
+      <Image
+        style={{width: 40, height: 40}}
+        source={require('./src/assets/pics/house.png')}
+      />
+    )
+  }
+  
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -36,7 +44,9 @@ function App(): JSX.Element {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{title: 'Home Screen'}}
+          options={{
+            title: 'Home Screen'
+          }}
         />
         <Stack.Screen
           name="User"
